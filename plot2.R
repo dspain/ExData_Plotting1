@@ -12,12 +12,12 @@ plot2 <- function(dataFile) {
   dataSubset <- subset(data, 
                        data$Date %in% as.Date(c('2007-02-01','2007-02-02'), 
                                               format="%Y-%m-%d"))
+  png(file='plot2.png')
   plot(dataSubset$DateTime,
        dataSubset$Global_active_power,
        type="l",
        xlab="",
        ylab="Global Active Power (kilowatts)")
-  dev.copy(png, file='plot2.png')
   dev.off()
 }
 
